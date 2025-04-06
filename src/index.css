@@ -1,0 +1,459 @@
+@font-face {
+  font-family: bebas;
+  src: url(/fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: kanit;
+  src: url(/fonts/Kanit-Regular.ttf)
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.InputOptions {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+  padding: 10px 15px 15px;
+  border-radius: 0px 0px 15px 15px;
+  margin: 0 auto;
+  position: relative;
+  top: 0; /* Creates a connected look with the textarea above */
+  z-index: 1;
+  margin-top: 5px;
+}
+
+.optionCheckBox {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: kanit;
+  font-size: 0.9rem;
+}
+
+.optionCheckBox span {
+  margin-right: 0.5rem;
+}
+
+.optionCheckBox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #404040;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.optionCheckBox input[type="checkbox"]:checked {
+  background-color: #f1f1f1;
+}
+
+.optionCheckBox input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: #0d0d0d;
+  font-size: 14px;
+  top: -1px;
+  left: 3px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 650px) {
+  .InputOptions {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0px 0px 15px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .InputOptions {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 8px 12px 12px;
+  }
+  
+  .optionCheckBox {
+    font-size: 0.8rem;
+  }
+  
+  .optionCheckBox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.optionCheckBox.number-input {
+  position: relative;
+}
+
+.optionCheckBox.number-input input[type="number"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #404040;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: kanit;
+  width: 40px;
+  padding: 2px 4px;
+  text-align: center;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.optionCheckBox.number-input input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+/* Remove the spinner arrows */
+.optionCheckBox.number-input input[type="number"]::-webkit-inner-spin-button,
+.optionCheckBox.number-input input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.optionCheckBox.number-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  font-family: kanit, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #2b2b2b;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styles */
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.logo {
+  padding: 30px;
+  margin: 30px;
+  margin: auto;
+}
+
+.logo h1 {
+  margin-top: -0.5rem;
+  font-family: bebas;
+  color: white;
+  font-size: 50px;
+  text-shadow: 0px 6px black;
+}
+
+.logo p {
+  margin-top: -.5rem;
+  font-family: kanit;
+  color: rgb(187, 187, 187);
+}
+
+/* Login/Signup container */
+.login-signup {
+  display: flex;
+  padding: 7px;
+  margin: 7px;
+
+  display: none;
+}
+
+.login-signup button {
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.406);
+  background-color: transparent;
+  min-width: 100px;
+  padding: 8px 15px;
+  border-radius: 50px;
+  border: 1px solid black;
+  font-family: kanit;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-signup button:hover {
+  transform: translateY(3px);
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.406);
+}
+
+.login-signup button:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+.loginbutton {
+  color: #0d0d0d;
+  background-color: #f1f1f1 !important;
+}
+
+.loginbutton:hover {
+  color: #d6d6d6;
+  background-color: #0d0d0d !important;
+}
+
+.signupbutton {
+  color: #f1f1f1 !important;
+  background-color: #0d0d0d !important;
+  margin-left: 0.4rem;
+}
+
+.signupbutton:hover {
+  color: #0d0d0d !important;
+  background-color: #f1f1f1 !important;
+}
+
+/* Response area */
+.AllResponseHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  margin-bottom: 200px; /* Fixed height margin for input */
+  padding: 0 1rem;
+}
+
+.mainResponse {
+  width: 100%;
+  max-width: 600px; /* Fixed width instead of vw */
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 1rem;
+  border-radius: 25px;
+  color: white;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.userholder {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userholder h1 {
+  margin-left: 5px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.dot {
+  height: .5px;
+  width: .5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 6px;
+  margin-left: .5rem;
+}
+
+.PostTitle {
+  background-color: #0d0d0d;
+  margin-left: .5rem !important;
+  padding: .3rem;
+  border-radius: 2px;
+}
+
+.userholder p {
+  margin: 0 0 0 8px;
+}
+
+.usertextholder {
+  margin-top: 10px;
+  width: 100%;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.usertextholder p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.usertextholder pre {
+  max-width: 100%;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.redditspan {
+  color: orangered;
+}
+
+/* Input area */
+.mainInput {
+  width: 100%;
+  max-width: 600px; /* Match response width */
+  position: fixed; 
+  bottom: 1.5rem; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.InputArea {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 30px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.InputArea textarea {
+  width: 100%;
+  min-height: 44px;
+  max-height: 120px;
+  border-radius: 20px;
+  padding: 12px 48px 12px 16px;
+  background-color: #404040;
+  color: white;
+  border: none;
+  resize: none;
+  font-family: kanit;
+  font-size: 1rem;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.InputArea textarea:focus {
+  outline: none;
+  transform: translateY(2px);
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.submitButton {
+  width: 44px;
+  height: 44px;
+  background-color: rgb(80, 80, 80);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.submitButton:hover {
+  transform: translateY(2px);
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.submitButton img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+/* Improved responsive breakpoints */
+@media (max-width: 650px) {
+  .mainResponse {
+    max-width: calc(100% - 2rem);
+    padding: 15px;
+  }
+
+  .dot {
+    margin-left: .1rem;
+  }
+  
+  .mainInput {
+    max-width: calc(100% - 2rem);
+    bottom: 1rem;
+  }
+  
+  .login-signup button {
+    min-width: 80px;
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeader {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    margin: 5px 0;
+    padding: 5px;
+  }
+  
+  .logo h1 {
+    font-size: 32px;
+    text-shadow: 0px 4px black;
+  }
+  
+  .login-signup {
+    position: static;
+    margin-top: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .mainResponse {
+    padding: 12px;
+  }
+  
+  .InputArea {
+    padding: 10px;
+  }
+  
+  .InputArea textarea {
+    padding: 10px 40px 10px 12px;
+  }
+  
+  .submitButton {
+    width: 36px;
+    height: 36px;
+    right: 12px;
+  }
+  
+  .submitButton img {
+    max-width: 18px;
+  }
+}

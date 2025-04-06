@@ -1,0 +1,22 @@
+
+            {/*
+            <div className="InputArea">
+                <textarea ref={textareaInput} placeholder="Ask about an idea/thread"></textarea>
+                <button onClick={sendExpress} className="submitButton">
+                    +
+                </button>
+            </div>
+
+
+
+
+
+            
+            */}
+            {/* OPTIONS ONLY DO IT LATER YK
+            <div className="InputOptions">
+                <div className="redditCheck">
+                    <span>reddit</span>
+                    <input type="checkbox" />
+                </div>
+            </div> */}
