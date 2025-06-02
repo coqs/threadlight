@@ -5,7 +5,7 @@ currently only supports reddit
 # HOW TO RUN???
 just download as zip,
 then cd the project and run cmd inside,
-in CMD run
+in CMD run (make sure to have node installed)
 ```
 npm install
 ```
