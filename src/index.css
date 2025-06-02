@@ -14,18 +14,14 @@
   padding: 0;
 }
 
-.InputOptions {
-  background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  gap: 1rem;
-  width: fit-content;
-  padding: 10px 15px 15px;
-  border-radius: 0px 0px 15px 15px;
-  margin: 0 auto;
-  position: relative;
-  top: 0; /* Creates a connected look with the textarea above */
-  z-index: 1;
-  margin-top: 5px;
+body {
+  font-family: kanit, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a; /* Dark background */
+  overflow-x: hidden;
 }
 
 .optionCheckBox {
@@ -45,7 +41,7 @@
   -webkit-appearance: none;
   width: 18px;
   height: 18px;
-  background-color: #404040;
+  background-color: #2d2d2d; /* Dark gray for checkbox */
   border-radius: 4px;
   cursor: pointer;
   position: relative;
@@ -53,13 +49,13 @@
 }
 
 .optionCheckBox input[type="checkbox"]:checked {
-  background-color: #f1f1f1;
+  background-color: #0d0d0d; /* Dark black when checked */
 }
 
 .optionCheckBox input[type="checkbox"]:checked::after {
   content: "✓";
   position: absolute;
-  color: #0d0d0d;
+  color: #f1f1f1; /* White checkmark */
   font-size: 14px;
   top: -1px;
   left: 3px;
@@ -98,7 +94,7 @@
 .optionCheckBox.number-input input[type="number"] {
   appearance: none;
   -webkit-appearance: none;
-  background-color: #404040;
+  background-color: #2d2d2d; /* Dark gray for input */
   border: none;
   border-radius: 4px;
   color: white;
@@ -124,16 +120,6 @@
 
 .optionCheckBox.number-input input[type="number"] {
   -moz-appearance: textfield;
-}
-
-body {
-  font-family: kanit, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #2b2b2b;
-  overflow-x: hidden;
 }
 
 code {
@@ -167,15 +153,15 @@ code {
 .logo h1 {
   margin-top: -0.5rem;
   font-family: bebas;
-  color: white;
+  color: #ffffff; /* Dark black for logo text */
   font-size: 50px;
-  text-shadow: 0px 6px black;
+  text-shadow: 0px 6px rgba(0, 0, 0, 0.3);
 }
 
 .logo p {
   margin-top: -.5rem;
   font-family: kanit;
-  color: rgb(187, 187, 187);
+  color: #e6e6e6; /* Light color for subtitles */
 }
 
 /* Login/Signup container */
@@ -183,7 +169,6 @@ code {
   display: flex;
   padding: 7px;
   margin: 7px;
-
   display: none;
 }
 
@@ -212,24 +197,25 @@ code {
 }
 
 .loginbutton {
-  color: #0d0d0d;
-  background-color: #f1f1f1 !important;
+  color: #f1f1f1; /* White text */
+  background-color: #0d0d0d !important; /* Dark black background */
 }
 
 .loginbutton:hover {
-  color: #d6d6d6;
-  background-color: #0d0d0d !important;
+  color: #0d0d0d; /* Dark text on hover */
+  background-color: #f1f1f1 !important; /* White background on hover */
 }
 
 .signupbutton {
-  color: #f1f1f1 !important;
-  background-color: #0d0d0d !important;
+  color: #0d0d0d !important; /* Dark text */
+  background-color: #f1f1f1 !important; /* White background */
+  border-color: #0d0d0d !important;
   margin-left: 0.4rem;
 }
 
 .signupbutton:hover {
-  color: #0d0d0d !important;
-  background-color: #f1f1f1 !important;
+  color: #f1f1f1 !important; /* White text on hover */
+  background-color: #0d0d0d !important; /* Dark background on hover */
 }
 
 /* Response area */
@@ -239,20 +225,20 @@ code {
   align-items: center;
   width: 100%;
   flex: 1;
-  margin-bottom: 200px; /* Fixed height margin for input */
+  margin-bottom: 200px; /* Fixed margin for input */
   padding: 0 1rem;
 }
 
 .mainResponse {
   width: 100%;
-  max-width: 600px; /* Fixed width instead of vw */
-  border: 1px solid black;
+  max-width: 600px;
+  border: 1px solid #0d0d0d; /* Dark black border */
   padding: 20px;
   margin-bottom: 1rem;
   border-radius: 25px;
-  color: white;
+  color: #e6e6e6; /* Light text */
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(13, 13, 13, 0.15); /* Dark black with opacity */
 }
 
 .userholder {
@@ -271,7 +257,7 @@ code {
 .dot {
   height: .5px;
   width: .5px;
-  background-color: #ffffff;
+  background-color: #0d0d0d; /* Dark black dot */
   border-radius: 50%;
   display: inline-block;
   padding: 6px;
@@ -279,7 +265,8 @@ code {
 }
 
 .PostTitle {
-  background-color: #0d0d0d;
+  background-color: #0d0d0d; /* Dark black background */
+  color: #f1f1f1; /* White text */
   margin-left: .5rem !important;
   padding: .3rem;
   border-radius: 2px;
@@ -307,14 +294,10 @@ code {
   text-align: center;
 }
 
-.redditspan {
-  color: orangered;
-}
-
 /* Input area */
 .mainInput {
   width: 100%;
-  max-width: 600px; /* Match response width */
+  max-width: 600px;
   position: fixed; 
   bottom: 1.5rem; 
   left: 50%;
@@ -329,7 +312,7 @@ code {
   padding: 20px;
   border-radius: 30px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(13, 13, 13, 0.2); /* Dark black with opacity */
   backdrop-filter: blur(5px);
 }
 
@@ -339,7 +322,7 @@ code {
   max-height: 120px;
   border-radius: 20px;
   padding: 12px 48px 12px 16px;
-  background-color: #404040;
+  background-color: #2d2d2d; /* Dark gray */
   color: white;
   border: none;
   resize: none;
@@ -358,7 +341,7 @@ code {
 .submitButton {
   width: 44px;
   height: 44px;
-  background-color: rgb(80, 80, 80);
+  background-color: #0d0d0d; /* Dark black */
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -369,9 +352,11 @@ code {
   justify-content: center;
   transition: all 0.2s ease;
   box-shadow: 0px 4px rgba(0, 0, 0, 0.3);
-  color: white;
+  color: #f1f1f1; /* White text */
   font-size: 2rem;
   margin-right: 1rem;
+  align-content: center;
+  text-align: center;
 }
 
 .submitButton:hover {
@@ -455,5 +440,295 @@ code {
   
   .submitButton img {
     max-width: 18px;
+  }
+}
+
+/* Redditspan customization */
+.redditspan {
+  color: #f37334; /* Dark black instead of blue */
+}
+
+/* Sidebar Menu Styles */
+.sidebar {
+  position: fixed;
+  left: -280px;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  background-color: #1a1a1a; /* Dark background */
+  border-right: 1px solid #0d0d0d;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.3);
+}
+
+.sidebar-header h2 {
+  color: #ffffff; /* Dark black */
+  font-family: bebas;
+  margin: 0;
+  font-size: 24px;
+}
+
+.close-sidebar {
+  background: none;
+  border: none;
+  color: #ffffff; /* Dark black */
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.sidebar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar-section h3 {
+  color: #ffffff; /* Dark black */
+  font-family: kanit;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.3);
+  padding-bottom: 8px;
+}
+
+/* Toggle Options */
+.option-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #e6e6e6;
+  font-family: kanit;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2d2d2d; /* Dark gray */
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #e6e6e6;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #0d0d0d; /* Dark black when active */
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+  background-color: #f1f1f1; /* White when active */
+}
+
+/* Login/Signup buttons in sidebar */
+.sidebar-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid rgba(13, 13, 13, 0.3);
+}
+
+.sidebar-auth button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: kanit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-login {
+  background-color: #0d0d0d; /* Dark black */
+  color: #f1f1f1; /* White text */
+  border: none;
+}
+
+.sidebar-signup {
+  background-color: transparent;
+  color: #ffffff; /* Dark text */
+  border: 1px solid #0d0d0d;
+}
+
+.sidebar-login:hover, .sidebar-signup:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu toggle button (hamburger) */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background-color: #0d0d0d; /* Dark black */
+  color: #f1f1f1; /* White text */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay when sidebar is open */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Documentation section links */
+.doc-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-link {
+  padding: 8px 0;
+  color: #e6e6e6;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.doc-link:hover {
+  color: #0d0d0d; /* Dark black on hover */
+  padding-left: 5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 250px;
+    left: -250px;
+  }
+  
+  .menu-toggle {
+    top: 10px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Top right options */
+.top-right-options {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-right-options .optionCheckBox.number-input {
+  background-color: rgba(13, 13, 13, 0.2); /* Dark black with opacity */
+  padding: 8px 12px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.top-right-options .optionCheckBox.number-input span {
+  color: white;
+  margin-right: 8px;
+  font-family: kanit;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+  .top-right-options {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .top-right-options .optionCheckBox.number-input {
+    padding: 6px 10px;
+  }
+  
+  .top-right-options .optionCheckBox.number-input span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-right-options {
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* On very small screens, position below the hamburger menu if needed */
+  @media (max-height: 400px) {
+    .top-right-options {
+      top: 50px;
+    }
   }
 }

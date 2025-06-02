@@ -137,19 +137,16 @@ const seleniumFunction = async () => {
   
   await driver.get(`${mainLink}`);
   
-  // Wait for the page to load or perform any necessary wait here
-  const linkArray = await driver.executeScript(`
-    let links = document.querySelectorAll('.eVNpHGjtxRBq_gLOfGDr');
-    let linkArray = [];
-    for(var i = 0; i < links.length; i++){
-        linkArray.push(links[i].href);
-        console.log(linkArray[i])
-    }
-    return linkArray;
-  `);
+const linkArray = await driver.executeScript(`
+  return Array.from(document.querySelectorAll('[data-testid="result-title-a"]'))
+    .map(a => a.href)
+    .filter(href => href.includes("reddit.com") && !href.includes("search"));
+`);
+
 
 
   for (let i=0; i<commentcount; i++) {
+    console.log("Found Reddit links:", linkArray);
     //push the topcomments
     topComments.push(await getRedditLinkTopComment(linkArray[i]))
     topCommentAuthors.push(await getRedditLinkTopCommentAuthor(linkArray[i]))
